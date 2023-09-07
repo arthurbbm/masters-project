@@ -12,8 +12,8 @@
 
     <script>
         $(document).ready(function() {
-            const repoOwner = 'yourusername'; // Replace with your username
-            const repoName = 'your-repository-name'; // Replace with your repository's name
+            const repoOwner = 'arthurbbm'; // Replace with your username
+            const repoName = 'masters-project'; // Replace with your repository's name
 
             $.get(`https://api.github.com/repos/${repoOwner}/${repoName}/issues`, function(data) {
                 data.forEach(issue => {
