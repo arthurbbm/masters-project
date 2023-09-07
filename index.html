@@ -1,1 +1,26 @@
-<h1>Hello there!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Issues</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Issues from My Repository</h1>
+    <ul id="issues-list"></ul>
+
+    <script>
+        $(document).ready(function() {
+            const repoOwner = 'yourusername'; // Replace with your username
+            const repoName = 'your-repository-name'; // Replace with your repository's name
+
+            $.get(`https://api.github.com/repos/${repoOwner}/${repoName}/issues`, function(data) {
+                data.forEach(issue => {
+                    $('#issues-list').append(`<li><a href="${issue.html_url}">${issue.title}</a></li>`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
